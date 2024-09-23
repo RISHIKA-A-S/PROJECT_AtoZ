@@ -1,66 +1,27 @@
-// Get references to DOM elements
-const movieSelect = document.getElementById('movie');
-const seats = document.querySelectorAll('.seat');
-const countElement = document.getElementById('count');
-const totalElement = document.getElementById('total');
-const container = document.querySelector('.container');
 
-// Initialize ticket price
-let ticketPrice = +movieSelect.value;
+// Select elements
+const movieEl = document.getElementById('movie');
+const seatContainerEl = document.querySelector('.container');
+const countEl = document.getElementById('count');
+const totalEl = document.getElementById('total');
 
-// Save selected movie and price to localStorage
-function setMovieData(movieIndex, moviePrice) {
-  localStorage.setItem('selectedMovieIndex', movieIndex);
-  localStorage.setItem('selectedMoviePrice', moviePrice);
-}
+// Global variables
+let seatCount = 0;
 
-// Populate UI with data from localStorage
-function populateUI() {
-  const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
-  if (selectedSeats !== null && selectedSeats.length > 0) {
-    seats.forEach((seat, index) => {
-      if (selectedSeats.indexOf(index) > -1) {
-        seat.classList.add('selected');
-      }
-    });
-  }
+// Function to update total price and count
+const updateTotal = () => {
+  const ticketPrice = Number(movieEl.value);
+  seatCount = document.querySelectorAll('.row .seat.selected').length;
+  countEl.textContent = seatCount;
+  totalEl.innerText = seatCount * ticketPrice;
+};
 
-  const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
-  if (selectedMovieIndex !== null) {
-    movieSelect.selectedIndex = selectedMovieIndex;
-    ticketPrice = +movieSelect.value;
-  }
-  updateSelectedCount();
-}
-
-// Update the total number of selected seats and total price
-function updateSelectedCount() {
-  const selectedSeats = document.querySelectorAll('.seat.selected');
-  const seatCount = selectedSeats.length;
-  const totalPrice = seatCount * ticketPrice;
-
-  countElement.innerText = seatCount;
-  totalElement.innerText = totalPrice;
-
-  // Save selected seats to localStorage
-  const seatIndexArray = [...selectedSeats].map(seat => [...seats].indexOf(seat));
-  localStorage.setItem('selectedSeats', JSON.stringify(seatIndexArray));
-}
-
-// Movie select event
-movieSelect.addEventListener('change', (e) => {
-  ticketPrice = +e.target.value;
-  setMovieData(e.target.selectedIndex, e.target.value);
-  updateSelectedCount();
-});
-
-// Seat click event
-container.addEventListener('click', (e) => {
-  if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
-    e.target.classList.toggle('selected');
-    updateSelectedCount();
+// Event listeners
+movieEl.addEventListener('change', updateTotal);
+seatContainerEl.addEventListener('click', (e) => {
+  const target = e.target;
+  if (target.classList.contains('seat') && !target.classList.contains('occupied')) {
+    target.classList.toggle('selected');
+    updateTotal();
   }
 });
-
-// Initial population of UI with saved data
-populateUI();
