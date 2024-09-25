@@ -1,0 +1,129 @@
+/* Global Styles */
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+  
+
+header {
+    background-color:rgb(17, 124, 143);
+    font-family:Courier New;
+    color:white;
+    font-weight:bold;
+    font-style:italic;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: left;
+    background-color:grey;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding-right: 10px;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; 
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+pre {
+    background-color:;
+    padding: 15px;
+    border-radius: 5px;
+    overflow: auto;
+    white-space: pre-wrap; /* Allows for wrapping in the pre element */
+    width: 100%; /* Make it responsive */
+    max-width: 600px; /* Limit max width */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+a img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color:rgb(17, 124, 143);
+
+    color:white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 15px;
+    border: 1px;
+    border-width:2em;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color:blue;
+    color:white;
+    margin: 5px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #555;
+}
+
+button:hover{
+    background-color:antiquewhite;
+}
