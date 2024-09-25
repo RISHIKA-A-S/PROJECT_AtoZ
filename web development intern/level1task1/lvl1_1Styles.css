@@ -1,0 +1,91 @@
+body, h2, p, nav, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color:LIGHTGREEN;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: YELLOW;
+}
+
+header h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: BLACK;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: YELLOW;
+}
+
+nav a:hover {
+    background-color:PINK;
+}
+
+/* Paragraph Styles */
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+/* Image Styles */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Form Container Styles */
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-container input[type="password"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid GREY;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+.form-container input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: ORANGE;
+    color: WHITE;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: PINK;
+}

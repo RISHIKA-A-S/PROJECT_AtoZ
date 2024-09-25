@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level2 Task2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background: linear-gradient(to left, magenta,blue);
+            color: black;
+        }
+
+        .logo {
+            font-size: 1em;
+            color:white;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 1em;
+        }
+
+        .nav-links a {
+            color: yellow;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: brown;
+            border-radius: 3px;
+        }
+
+
+        
+        img.responsive {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background: linear-gradient(to right,blue,magenta);
+            color: white;
+            text-align: center;
+            padding: 0.25rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background:magenta;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+                padding: 1em;
+                border-bottom: 1px solid pink;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AVENGERS</div>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+<center>
+    <main>
+        <section id="home">
+            <h1>Level2-Task2</h1>
+            <img src="avan.jpg" width=1000 alt="Image" class="responsive">
+           </main>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <footer>
+        <p>&copy;Avengers</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

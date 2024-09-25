@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COGNIFYZ INTERNSHIP - CALCULATOR</title>
+    <link rel="stylesheet" href="lvl1_2styles.css">
+</head>
+<body onload="displayGreeting()">
+    <div class="box">
+        <div class="c">
+            <h2>**** BASIC CALCULATOR ****</h2>
+            <label for="first-number">Enter first number:</label>
+            <input id="first-number" type="number" placeholder="0">
+            <br>
+            <b style="font-size:20px;">+</b>
+            <br>
+            <label for="second-number">Enter second number:</label>
+            <input id="second-number" type="number" placeholder="0">
+            <br>
+            <br>
+            <button class="add" onclick="calculate()">ADD</button>
+            <br>
+            <br>
+            <div class="result-container">
+                <span class="result-level">RESULT:</span>
+                <span id="result" style="font-weight:bold;"></span>
+            </div>
+            <br>
+            <button class="color-button" onclick="changeColor()">Click Me to Change Color</button>
+        </div>    
+    </div>
+    <script src="lvl1_2script.js"></script>
+</body>
+</html>
