@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level2 Task2</title>
+    <link rel="stylesheet" href="gg.css">
+</head>
+<body>
+    <header>
+        <div class="logo">AVENGERS</div>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+<center>
+    <main>
+        <section id="home">
+            <h1>Level2-Task2</h1>
+            <img src="attention.jpg" width="1000" alt="Image" class="responsive">
+           </main>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <footer>
+        <p>&copy;Avengers</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

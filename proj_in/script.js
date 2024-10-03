@@ -17,3 +17,8 @@ function displayGreeting() {
 
     alert(greeting);
 }
+
+function my_fun(){
+    author.src="rishika.jpg";
+    
+}
